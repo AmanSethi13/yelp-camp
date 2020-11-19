@@ -1,0 +1,48 @@
+    <!-- ECHO is on. -->
+    <%- include ("../partials/header") %>
+    
+
+
+
+  <!-- <h4><%=currentUser %></h4> -->
+    <div class="container">
+        <header class="jumbotron">
+                <div class="container">
+                    <h1>This is Campgrounds page </h1>
+                    <p>View various grounds from all over the world</p>
+                    <p>
+                        <a class="btn btn-success btn-lg" href="/campgrounds/new">Add new campground</a>
+                        <a class="btn btn-primary btn-lg" href="/">HOME</a>
+                    </p>
+                </div>
+        </header>
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Most popular grounds</h3>
+            </div>
+        </div>
+    
+    
+        
+    <div class="row" style="display:flex; flex-wrap:wrap;">
+            <%campgrounds.forEach(function(camp){%>
+            <div class="col-md-4 col-sm-6">
+               
+              
+                    <div class="thumbnail" width = "100px">
+                        <img class="site" src="<%=camp.image%>">
+                        <div class="caption" style="text-align: center;">
+                            <h4><%=camp.name%><h4>
+                                <a href="/campgrounds/<%=camp._id %>" class="btn btn-primary">More info</a>
+                        </div>
+                        
+                           
+                        
+                     </div>
+                    
+            </div>
+            <%})%>
+            
+            </div>
+    </div>
+    <%- include ("../partials/footer") %>
